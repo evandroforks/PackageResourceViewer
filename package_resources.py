@@ -206,7 +206,12 @@ def get_packages_list(ignore_packages=True, ignore_patterns=[]):
 def get_sublime_packages(ignore_packages=True, ignore_patterns=[]):
     package_list = get_packages_list(ignore_packages, ignore_patterns)
     extracted_list = _get_packages_from_directory(sublime.packages_path())
-    extracted_list.extend(['0_packagesmanager_loader', '0_package_control_loader', '0_settings_loader'])
+    extracted_list.extend([
+            '0_packagesmanager_loader33',
+            '0_packagesmanager_loader38',
+            '0_package_control_loader',
+            '0_settings_loader',
+        ])
     return [x for x in package_list if x not in extracted_list]
 
 def _get_packages_from_directory(directory, file_ext=""):
